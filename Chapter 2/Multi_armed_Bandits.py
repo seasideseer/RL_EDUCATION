@@ -17,8 +17,8 @@ import plotly.express as px
 
 class Arm():
 
-    def __init__(self, ix, mean, sd):
-        self.ix = ix
+    def __init__(self, action, mean, sd):
+        self.action = action
         self.mean = mean
         self.sd = sd
 
@@ -40,7 +40,7 @@ class MultiArmedBandits():
     def get_actions(self):
         action_s = []
         for arm in self.arm_s:
-            action_s.append(arm.ix)
+            action_s.append(arm.action)
         action_s = np.array(action_s)
         return(action_s)
 
